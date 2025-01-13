@@ -1,12 +1,12 @@
 import { Component } from "react";
 
 import Counter from "./Components/Counter";
-import PracticeTailwind from "./Components/Practice-Tailwind";
 
 import "./index.css";
 import "./Geohyper.css";
 
 class Geohyper extends Component {
+
   render() {
     const randomNumber = () => {
       return Math.floor(Math.random() * 10000);
@@ -18,9 +18,11 @@ class Geohyper extends Component {
         </h1>
         <hr className="h-[1.5px] text-center w-full rounded-mdS my-8 mx-auto bg-fuchsia-400 border-0 hover:w-5 transition-all duration-[3s]" />
 
-        <Counter random={randomNumber()} />
+        <Counter number={369} count="24" random={randomNumber()}>
+          hi
+        </Counter>
+        <Counter> bye </Counter>
 
-        <PracticeTailwind />
       </div>
     );
   }
