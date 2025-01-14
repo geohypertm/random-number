@@ -1,46 +1,32 @@
-import { Component } from "react"; 
+// import { Component } from "react";
+import { useState } from "react";
 
-class Counter extends Component {
+// class Counter extends Component {
+//   state = { count: 0 };
 
-  static defaultProps = {
-    count: 45
+//   increase = () => {
+//     this.setState({ count: this.state.count + 1 });
+//   };
+//   render() {
+//     const { count } = this.state;
+//     return (
+//       <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 m-auto dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 block" onClick={this.increase}> {count} روش کلیک کن تا اضافه بشه</button>
+//     );
+//   }
+// }
+
+const Counter = () => {
+
+  const [count, setCount] = useState(0);
+
+  const increase = () => {
+    setCount(count + 1);
   }
-  render() {
-
-    const {random, number, count} = this.props;
-    const {children} = this.props
-
-    return (
-      <>
-        <p className="text-center m-auto bg-blue-100 text-stone-500 font-medium text-[40px] rounded-md w-[20%] p-2">
-          شمارنده : {random}
-        </p>
-        <br />
-        <p className="text-center m-auto bg-blue-100 text-stone-500 font-medium text-[40px] rounded-md w-[20%] p-2">{children}</p>
-        <br />
-        <p className="text-center m-auto bg-blue-100 text-stone-500 font-medium text-[40px] rounded-md w-[20%] p-2">{number}</p>
-        <p className="text-center m-auto bg-blue-100 text-stone-500 font-medium text-[40px] rounded-md w-[20%] p-2">{count}</p>
-
-        <div className="shadow-xl shadow-green-400 p-12 m-5">Lorem ipsum dolor sit amet consectetur.</div>
-      </>
-    );
-  }
+  return (
+    <button type="button" className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center block m-auto select-none" onClick={increase}> {count} روش کلیک کن تا اضافه بشه</button>
+  )
 }
 
-// const Counter = (props) => {
 
-//     return (
-//         <>
-//         <p className="text-center m-auto bg-blue-100 text-stone-500 font-medium text-[40px] rounded-md w-[20%] p-2">شمارنده : {props.random}</p>
-//         <p>{props.count || 420}</p>
-//         <br />
-//         </>
-//     )
-// }
-
-
-// Counter.defaultProps = {
-//   count: 120
-// }
 
 export default Counter;

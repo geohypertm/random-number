@@ -21,7 +21,7 @@ class Geohyper extends Component {
         <Counter number={369} count="24" random={randomNumber()}>
           hi
         </Counter>
-        <Counter> bye </Counter>
+        {/* <Counter> bye </Counter> */}
 
       </div>
     );
